@@ -1,0 +1,42 @@
+methods to save the model
+
+1 pickle
+2 joblib
+
+save the model using joblib
+
+import joblib
+model_file_name="netflix_svm_model.pkl"
+joblib.dump(classifier , model_model_name)
+ls
+
+loading a model
+
+clf = joblib.load('netflix_svm_model.pkl')
+
+a=['best']
+clf.redict(a)
+
+
+it wont work in nlp deployment
+as we are not transforming the data here
+
+we have save tfid model as well as model both in case of NLP
+
+save the model using joblib
+
+import joblib
+model_file_name="netflix_svm_model.pkl"
+vectorizer_filename='netflix_vector.pkl"
+joblib.dump(classifier , model_model_name)
+joblib.dump(Vectorizer, vectorizer_filename)
+
+ls
+
+loading a model
+vect = joblib.load('netflix_vector.pkl')
+clf = joblib.load('netflix_svm_model.pkl')
+
+a=['best']
+b=vect.trasnform([a])
+clf.predict(b)
